@@ -37,7 +37,7 @@ const ChatPage = () => {
         isConnecting.current = true;
 
         console.log('Attempting to connect WebSocket');
-        socketRef.current = new WebSocket(`ws://localhost:8081/ws/chat?token=${token}`);
+        socketRef.current = new WebSocket(`ws://financial-instruments-platform-backend.onrender.com/ws/chat?token=${token}`);
 
         socketRef.current.onopen = () => {
             console.log('WebSocket connection established');
