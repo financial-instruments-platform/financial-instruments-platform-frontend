@@ -1,7 +1,7 @@
-const API_BASE_URL = 'https://financial-instruments-platform-backend.onrender.com';
+const API_BASE_URL = 'https://financial-instruments-platform-backend.onrender.com/api';
 
 export const login = async (username, password) => {
-    const response = await fetch(`${API_BASE_URL}/login`, {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const login = async (username, password) => {
 };
 
 export const register = async (username, password) => {
-    const response = await fetch(`${API_BASE_URL}/register`, {
+    const response = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const register = async (username, password) => {
 
 
 export const getMessageHistoryBetween = async (who) => {
-    const response = await fetch(`${API_BASE_URL}/api/history?recipient=${who}`, {
+    const response = await fetch(`${API_BASE_URL}/history?recipient=${who}`, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
@@ -52,7 +52,7 @@ export const getMessageHistoryBetween = async (who) => {
 
 
 export const getUsernames = async () => {
-    const response = await fetch(`${API_BASE_URL}/api/users`, {
+    const response = await fetch(`${API_BASE_URL}/users`, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
@@ -68,7 +68,7 @@ export const getUsernames = async () => {
 
 
 export const getMySubscriptions = async () => {
-    const response = await fetch(`${API_BASE_URL}/api/subscriptions`, {
+    const response = await fetch(`${API_BASE_URL}/subscriptions`, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
