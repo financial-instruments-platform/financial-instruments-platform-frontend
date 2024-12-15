@@ -35,7 +35,7 @@ const DashboardPage = () => {
         isConnectingSubscription.current = true;
 
         console.log("Attempting to connect to the subscription server");
-        const subscriptionSocket = new WebSocket(`ws://financial-instruments-platform-backend.onrender.com/ws/subscribe?token=${token}`);
+        const subscriptionSocket = new WebSocket(`wss://financial-instruments-platform-backend.onrender.com/ws/subscribe?token=${token}`);
         subscriptionWebSocketRef.current = subscriptionSocket;
 
         subscriptionSocket.onopen = () => {
@@ -68,7 +68,7 @@ const DashboardPage = () => {
         isConnectingRealTime.current = true;
 
         console.log("Attempting to connect to the real-time data server");
-        const realTimeSocket = new WebSocket(`ws://financial-instruments-platform-backend.onrender.com/ws/realtime?token=${token}`);
+        const realTimeSocket = new WebSocket(`wss://financial-instruments-platform-backend.onrender.com/ws/realtime?token=${token}`);
         realTimeWebSocketRef.current = realTimeSocket;
 
         realTimeSocket.onopen = () => {
